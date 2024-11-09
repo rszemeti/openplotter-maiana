@@ -219,10 +219,7 @@ class MyFrame(wx.Frame):
 						return
 					hardwareRevision = data['hardwareRevision']['value']
 					hardwareRevision = hardwareRevision.split('.')
-					if int(hardwareRevision[0]) < 11:
-						self.ShowStatusBarRED(_('The hardware version of your MAIANA device is too old'))
-						return
-					if int(hardwareRevision[0]) == 11 and int(hardwareRevision[1]) < 3:
+					if int(hardwareRevision[0]) < 9:
 						self.ShowStatusBarRED(_('The hardware version of your MAIANA device is too old'))
 						return
 					firmwareRevision = data['firmwareRevision']['value']
